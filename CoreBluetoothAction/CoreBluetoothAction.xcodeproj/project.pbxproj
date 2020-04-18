@@ -74,9 +74,8 @@
 			children = (
 				1D582F562440550600201664 /* AppDelegate.swift */,
 				1D582F5A2440550600201664 /* ViewController.swift */,
-				1D582F6D244058E800201664 /* CentralViewController.swift */,
+				1D60059A244AA3320027BD7B /* 作为中心 */,
 				1D4F99E92446EB1F00A27C2C /* 作为外设 */,
-				1D6BC3F92445A2D20016F127 /* PeripheralViewController.swift */,
 				1D582F5C2440550600201664 /* Main.storyboard */,
 				1D582F5F2440550C00201664 /* Assets.xcassets */,
 				1D582F612440550C00201664 /* LaunchScreen.storyboard */,
@@ -91,6 +90,15 @@
 				1D582F6B2440556B00201664 /* CoreBluetooth.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D60059A244AA3320027BD7B /* 作为中心 */ = {
+			isa = PBXGroup;
+			children = (
+				1D582F6D244058E800201664 /* CentralViewController.swift */,
+				1D6BC3F92445A2D20016F127 /* PeripheralViewController.swift */,
+			);
+			path = "作为中心";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

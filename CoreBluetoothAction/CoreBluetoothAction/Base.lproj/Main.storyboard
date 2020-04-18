@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TFL-4f-Rr6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -42,7 +42,6 @@
                                 </state>
                                 <connections>
                                     <action selector="asPeripheralBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6cO-6x-A9A"/>
-                                    <segue destination="d6J-Qa-cPX" kind="presentation" identifier="asPeripheral" modalPresentationStyle="fullScreen" id="5p4-Ft-wph"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -55,13 +54,31 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cpM-kM-KAt"/>
                     <connections>
-                        <segue destination="8eA-3H-cE2" kind="presentation" identifier="asCentral" modalPresentationStyle="fullScreen" id="c0c-SW-dfx"/>
+                        <segue destination="8eA-3H-cE2" kind="push" identifier="asCentral" id="c0c-SW-dfx"/>
+                        <segue destination="d6J-Qa-cPX" kind="push" identifier="asPeripheral" id="dy7-oS-4kb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="796" y="364"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KAy-CQ-I6b">
+            <objects>
+                <navigationController id="TFL-4f-Rr6" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xzn-NS-f2X">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wcf-S6-9fU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="atm-I1-eXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-84" y="364"/>
         </scene>
         <!--Peripheral Mgr View Controller-->
         <scene sceneID="8v1-Gm-vsx">
@@ -73,10 +90,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="PAd-eL-eOw"/>
                     </view>
+                    <navigationItem key="navigationItem" id="WVd-hb-fL9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOR-Ee-RpX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="810"/>
+            <point key="canvasLocation" x="1580" y="838"/>
         </scene>
         <!--Central View Controller-->
         <scene sceneID="Me7-QV-WHG">
@@ -87,14 +105,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QXa-M4-IeL">
-                                <rect key="frame" x="0.0" y="44" width="414" height="383"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="383"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="383" id="Tl9-4J-5XE"/>
                                 </constraints>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8e-d3-9cp">
-                                <rect key="frame" x="8" y="437" width="121" height="46"/>
+                                <rect key="frame" x="8" y="481" width="121" height="46"/>
                                 <color key="backgroundColor" red="0.28551650049999999" green="0.73783206940000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="WFr-tW-dkS"/>
@@ -108,7 +126,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Lz-M9-BFB">
-                                <rect key="frame" x="146.5" y="437" width="121" height="46"/>
+                                <rect key="frame" x="146.5" y="481" width="121" height="46"/>
                                 <color key="backgroundColor" red="0.28551650049999999" green="0.73783206940000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="dSj-ki-HUX"/>
@@ -122,7 +140,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsw-nv-gM5">
-                                <rect key="frame" x="285" y="437" width="121" height="46"/>
+                                <rect key="frame" x="285" y="481" width="121" height="46"/>
                                 <color key="backgroundColor" red="0.28551650049999999" green="0.73783206940000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="UDL-WK-LTt"/>
@@ -147,9 +165,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lt1-4y-tvu"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ZPV-T0-n3U"/>
                     <connections>
                         <outlet property="listTable" destination="QXa-M4-IeL" id="gni-gd-wb9"/>
-                        <segue destination="DU4-Wn-0MT" kind="presentation" identifier="peripheralSegue" modalPresentationStyle="fullScreen" id="zny-Wd-R9L"/>
+                        <segue destination="DU4-Wn-0MT" kind="push" identifier="peripheralSegue" id="zny-Wd-R9L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDD-t1-6ED" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -219,6 +238,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jar-si-G6r"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ADb-Kt-gWE"/>
                     <connections>
                         <outlet property="peripheralTable" destination="3tR-RT-K20" id="r8G-BQ-zjw"/>
                     </connections>

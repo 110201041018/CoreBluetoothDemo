@@ -21,10 +21,6 @@ class ViewController: UIViewController {
     
     @IBAction func asPeripheralBtnAction(_ sender: Any) {
         performSegue(withIdentifier: "asPeripheral", sender: nil)
-        
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
     }
     
 }

@@ -27,16 +27,8 @@ class PeripheralMgrViewController: UIViewController ,CBPeripheralManagerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        phermgr = CBPeripheralManager.init(delegate: self, queue: nil, options: nil)
-        
-     
-        
-        
-        //[CBAdvertisementDataIsConnectable:true,CBAdvertisementDataLocalNameKey:true,CBAdvertisementDataManufacturerDataKey:""]
-        
-        
-        
-        
+        phermgr = CBPeripheralManager.init(delegate: self, queue: nil)
+
     }
     
     @objc func sendData1(characteristic:CBCharacteristic){
