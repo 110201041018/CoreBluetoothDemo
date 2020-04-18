@@ -23,7 +23,6 @@ class PeripheralViewController: UIViewController ,CBPeripheralDelegate,UITableVi
         peripheralTable.register(UITableViewCell.self, forCellReuseIdentifier: "peripheral")
         peripheralTable.tableFooterView = UIView.init()
         
-        
     }
     
     @IBAction func servicesBtnAction(_ sender: Any) {
@@ -54,13 +53,10 @@ class PeripheralViewController: UIViewController ,CBPeripheralDelegate,UITableVi
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-//        if characteristic.uuid.uuidString == "EE01" {
         if (characteristic.value != nil) {
             let k = String.init(data: characteristic.value!, encoding: String.Encoding.utf8)
                   print("\(characteristic.uuid.uuidString): \(k)")//收到来自通知的数据
         }
-      
-//        }
          
     }
     
@@ -133,5 +129,7 @@ class PeripheralViewController: UIViewController ,CBPeripheralDelegate,UITableVi
             mainPeripheral.writeValue(data, for: character, type: .withResponse)
         }
     }
+    
+  
     
 }

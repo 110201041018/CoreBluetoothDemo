@@ -24,6 +24,7 @@ class PeripheralMgrViewController: UIViewController ,CBPeripheralManagerDelegate
     var phermgr:CBPeripheralManager!
     var cbmgr:CBManager!
     var didSendChara:CBCharacteristic!
+    @IBOutlet weak var tips: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +75,8 @@ class PeripheralMgrViewController: UIViewController ,CBPeripheralManagerDelegate
             service1.characteristics = [chart_0,chart_1,noti]
             //增加1个服务
             phermgr.add(service1)
-
+            tips.isHidden = false
+            
         case CBManagerState.unauthorized: //无BLE权限
             NSLog("无BLE权限")
         case CBManagerState.poweredOff: //蓝牙未打开
@@ -144,6 +146,13 @@ class PeripheralMgrViewController: UIViewController ,CBPeripheralManagerDelegate
     func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didUnsubscribeFrom characteristic: CBCharacteristic) {
         
     }
-    
+    override func viewWillDisappear(_ animated: Bool) {
+
+        if (timeAction != nil) {
+            timeAction.invalidate()
+        }
+        //停止广播
+        phermgr.stopAdvertising()
+    }
 
 }

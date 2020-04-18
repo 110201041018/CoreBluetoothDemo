@@ -16,6 +16,7 @@ class CentralViewController: UIViewController,CBCentralManagerDelegate,UITableVi
     
     var centralMgr:CBCentralManager!
     var itemArray:Array<CBPeripheral>! = []
+    var cbPeripheral:CBPeripheral!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,7 @@ class CentralViewController: UIViewController,CBCentralManagerDelegate,UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = itemArray[indexPath.row]
+        cbPeripheral = item
         centralMgr.connect(item, options: [CBConnectPeripheralOptionNotifyOnConnectionKey:true,CBConnectPeripheralOptionNotifyOnDisconnectionKey:true])
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -92,6 +94,13 @@ class CentralViewController: UIViewController,CBCentralManagerDelegate,UITableVi
         }
     }
     
+    //断开回连
+    func centralManager(_ central: CBCentralManager, willRestoreState dict: [String : Any]) {
+        
+        centralMgr.connect(cbPeripheral, options: [CBConnectPeripheralOptionNotifyOnConnectionKey:true,CBConnectPeripheralOptionNotifyOnDisconnectionKey:true])
+        
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "peripheralSegue" {
@@ -100,6 +109,7 @@ class CentralViewController: UIViewController,CBCentralManagerDelegate,UITableVi
         }
     }
     
+ 
 
 
 }

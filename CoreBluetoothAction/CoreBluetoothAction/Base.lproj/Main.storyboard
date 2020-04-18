@@ -87,14 +87,33 @@
                     <view key="view" contentMode="scaleToFill" id="H56-sa-fZg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已经成功作为外设，可打开另一个中心进行连接" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNn-xO-VUA">
+                                <rect key="frame" x="0.0" y="390" width="414" height="116"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="116" id="Ztt-4g-LLw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="aNn-xO-VUA" firstAttribute="trailing" secondItem="PAd-eL-eOw" secondAttribute="trailing" id="4ON-tJ-ZWO"/>
+                            <constraint firstItem="aNn-xO-VUA" firstAttribute="leading" secondItem="PAd-eL-eOw" secondAttribute="leading" id="IIA-ph-4U5"/>
+                            <constraint firstItem="aNn-xO-VUA" firstAttribute="centerY" secondItem="H56-sa-fZg" secondAttribute="centerY" id="tdo-Qh-E2L"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PAd-eL-eOw"/>
                     </view>
                     <navigationItem key="navigationItem" id="WVd-hb-fL9"/>
+                    <connections>
+                        <outlet property="tips" destination="aNn-xO-VUA" id="Jki-RS-3Cn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOR-Ee-RpX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="838"/>
+            <point key="canvasLocation" x="1579.7101449275362" y="837.72321428571422"/>
         </scene>
         <!--Central View Controller-->
         <scene sceneID="Me7-QV-WHG">
